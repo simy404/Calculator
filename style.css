@@ -1,0 +1,73 @@
+.calculator {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    
+}
+
+button , .equal,.delete {
+    width: 120px;
+    height: 60px;
+}
+
+body{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ekranın yüksekliği kadar alan kapla */
+    margin: 0; /* Body etrafındaki boşluğu kaldır */
+}
+
+.display {
+    padding: 10px;
+    text-align: right;
+    font-size: 24px;
+    border-bottom: 1px solid #ccc;
+}
+
+.displayMini {
+    font-size: 12px;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    box-sizing: border-box;
+    letter-spacing: -1px;
+    margin: 0;
+    padding:0 !important;
+    
+}
+
+button:not(.disable):hover, .button-clicked {
+    background-color: rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+}
+
+.operator {
+    color:white; 
+    background-color:#f2a93b;
+}
+
+.flex {
+    display: flex;
+}
+
+.equal , .backspace{
+    background-color: rgb(131, 131, 131);
+    color: #f2a93b;
+}
+
+
+
+
+
+
+
+
+

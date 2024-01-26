@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İSTEMCİ TARAFLI PROGRAMLAMA - Hesap Makinesi</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body onload="onLoadConfiguration">
+    <div class="calculator">
+        <div class="display displayMini" id="displayMini"></div>
+        <div class="display" id="display">0</div>
+        
+            <div class="flex">
+                <button class="disable"></button>
+                <button class="disable"></button>
+                <button id="c" onclick="reset()">C</button>
+                <button id="backspace" class="backspace" onclick="backspace()">X</button>
+                
+            </div>
+
+            <div class="flex">        
+                <button id="btn-7" onclick="appEndToDisplay(7)">7</button>
+                <button id="btn-8" onclick="appEndToDisplay(8)">8</button>
+                <button id="btn-9" onclick="appEndToDisplay(9)">9</button>
+                <button class="operator" onclick="currentOperation('*')">*</button>
+                
+            </div>
+
+            <div class="flex">   
+                <button id="btn-4" onclick="appEndToDisplay(4)">4</button>
+                <button id="btn-5" onclick="appEndToDisplay(5)">5</button>
+                <button id="btn-6" onclick="appEndToDisplay(6)">6</button>
+                <button class="operator" onclick="currentOperation('-')">-</button>
+                
+            </div>
+        
+            <div class="flex">   
+                <button id="btn-1" onclick="appEndToDisplay(1)">1</button>
+                <button id="btn-2" onclick="appEndToDisplay(2)">2</button>
+                <button id="btn-3" onclick="appEndToDisplay(3)">3</button>
+                <button class="operator" onclick="currentOperation('+')">+</button>
+            </div>
+        
+            <div class="flex">        
+                <button class="disable"></button>
+                <button id="btn-0" class="double" onclick="appEndToDisplay(0)">0</button>
+                <button class="disable"></button>
+                <button class="operator" onclick="currentOperation('/')">/</button>
+                
+            </div>
+
+            <div class="flex">                
+                <button id="dot" onclick="appEndToDisplay('.')">.</button>
+                <button class="operator" onclick="currentOperation('%')">%</button>
+                
+                <button id="equal"class="equal operator" onclick="equal()">=</button>
+                
+            </div>
+        <div class="display">
+            
+        </div>
+    </div>
+    
+    <audio id="myAudio" controls style="display: none;">
+        <source src="music.mp3" type="audio/mpeg">
+      </audio>
+      
+</body>
+</html>
+<script src="custom.js"></script>
