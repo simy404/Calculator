@@ -12,6 +12,8 @@ var currentOperationValue ;
 var totalValue = null;
 var isInputFilled = false;
 var clearInputOnNextNumber = false;
+var isDivisionByZero= false;
+var exception = "You can't divide by zero";
 
 // Enum tanımı
 const Operation = {
@@ -98,17 +100,26 @@ function currentOperation(operation)
         isInputFilled = !isInputFilled;
         clearInputOnNextNumber = true ;
     }
-
+           
     //totalValue henüz belirlenmemişse totalValue'yi "0" olarak başlat
     if (totalValue == null) {
         totalValue = 0;
     }
     
+    //Handle divide by zero
+    if(isDivisionByZero)
+    {
+        display.innerText = exception;
+        isDivisionByZero = !isDivisionByZero;
+    }
+    else
+    {
     //Ekranı sıfırla
     display.innerText = totalValue; 
 
     // Mini ekrana şu anki toplam değeri ve yapılan işlemi göster
     displayMini.innerText = totalValue + " "  + operation; 
+    }
     
     //Bastığımız operasyon butonunu currentOperationValue olarak ayarla
     currentOperationValue = operation;
@@ -130,6 +141,11 @@ function updateTotalValue()
                 totalValue -= Number(display.innerText);
                 break;
             case Operation.Division:
+                if(Number(display.innerText) === 0)
+                {
+                    isDivisionByZero = !isDivisionByZero;
+                    return
+                }
                 totalValue /= Number(display.innerText);
                 break;
             case Operation.Multiplication:
@@ -141,6 +157,7 @@ function updateTotalValue()
             default:
                 break;
         }
+        return 1;
     }
 }
 
