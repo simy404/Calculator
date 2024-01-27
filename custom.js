@@ -177,7 +177,7 @@ document.addEventListener("keydown", function(event)
 {    
     var key = event.key;
 
-    if (Number(key)) 
+    if (!isNaN(Number(key))) 
     {
         var button = "btn-"+key;
         document.getElementById(button).click();
